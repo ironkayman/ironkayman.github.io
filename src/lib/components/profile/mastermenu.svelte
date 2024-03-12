@@ -26,12 +26,15 @@ const {
   defaultValue: tab,
 });
 
-const triggers = [
+var triggers = [
   { id: 'links', title: 'Links' },
   { id: 'about', title: 'About' },
   { id: 'projects', title: 'Projects' },
-  { id: 'gateway', title: '-' },
 ];
+
+if (tabName == 'gateway') {
+  triggers.push({ id: 'gateway', title: '-' });
+}
 
 const [send, receive] = crossfade({
   duration: 250,
