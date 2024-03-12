@@ -6,14 +6,10 @@ import { writable } from "svelte/store";
 import { onMount } from "svelte";
 
 import MasterMenu from "$lib/components/profile/mastermenu.svelte";
+import { page } from "$app/stores";
 
-document.title = "ironkayman"
+document.title = "IRNKM : " + $page.data.tab;
 
-let userHasScrolled;
-window.onscroll = function() {
-  if (!userHasScrolled) window.scrollTo(0, window.visualViewport.height * 0.6);
-  userHasScrolled = true;
-}
 
 </script>
 
@@ -38,6 +34,6 @@ window.onscroll = function() {
   </div>
 </div>
 
-<MasterMenu/>
+<MasterMenu tab={$page.data.tab}/>
 
 <div class="footer"></div>

@@ -3,23 +3,31 @@ import { createTabs, melt } from '@melt-ui/svelte';
 
 import { onMount } from 'svelte';
 
+import { goto, afterNavigate, disableScrollHandling } from '$app/navigation'; 
+
 import { cubicInOut } from 'svelte/easing';
 import { crossfade } from 'svelte/transition';
 
 import { FileLock2Fill } from "svelte-bootstrap-icons"
 
+import Links from '$lib/components/profile/links.svelte'
 import About from '$lib/components/profile/about.mdx'
 import Projects from '$lib/components/profile/projects.mdx'
 import Passcode from "$lib/components/profile/passcode.svelte"
+
+export let tab;
+
+const tabName = tab;
 
 const {
   elements: { root, list, content, trigger },
   states: { value },
 } = createTabs({
-  defaultValue: 'about',
+  defaultValue: tab,
 });
 
 const triggers = [
+  { id: 'links', title: 'Links' },
   { id: 'about', title: 'About' },
   { id: 'projects', title: 'Projects' },
   { id: 'gateway', title: '-' },
@@ -30,30 +38,24 @@ const [send, receive] = crossfade({
   easing: cubicInOut,
 });
 
+let userHasScrolled;
 
-/**
- * Scrolls do a designated div end
- * 
- * @param {Event} e
- */
-function clickHandler(e) {
-  e.preventDefault();
-  let id = this.dataset.value;
-  let content = document.querySelector(
-    `.tabbed-content[aria-labelledby=${id}]`
-  );
-
-  window.scrollTo({
-    behavior: "smooth",
-    top: window.visualViewport.height * 0.6,
-  })
-}
+afterNavigate(() => {
+  // let tabElement = document.getElementById(tabName);
+  // console.log('tabElement after nav:', tabElement)
+  let y = window.visualViewport.height * 0.6;
+  // let y = tabElement.getBoundingClientRect().top
+  window.scrollTo(0, y);
+  // disableScrollHandling();
+});
 
 onMount(() => {
-  const buttons = document.querySelectorAll(".trigger-button");
-
-  for (let link of buttons) {
-    link.addEventListener("click", clickHandler);
+  let tabElement = document.getElementById(tabName);
+  window.onscroll = function() {
+    if (!userHasScrolled) {
+      window.scrollTo(0, tabElement.getBoundingClientRect().top);
+    }
+    userHasScrolled = true;
   }
 })
 </script>
@@ -73,6 +75,7 @@ onMount(() => {
         <button id={triggerItem.id}
           class="trigger-button"
           use:melt={$trigger(triggerItem.id)}
+          on:click={() => goto("/" + triggerItem.id, {noScroll: true})}
         >
           {#if triggerItem.id != 'gateway'}
             {triggerItem.title}
@@ -87,6 +90,9 @@ onMount(() => {
           {/if}
         </button>
       {/each}
+    </div>
+    <div use:melt={$content('links')} class="tabbed-content">
+      <Links/>
     </div>
     <div use:melt={$content('about')} class="tabbed-content">
       <About/>
