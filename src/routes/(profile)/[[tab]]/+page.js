@@ -1,11 +1,11 @@
 import { goto } from '$app/navigation';
 
 export const load = ({ params }) => {
-    if (!params.tab) goto("/links");
+    // if (!params.tab) goto("/links");
 
     return {
-        tab: params.tab
+        tab: params.tab ?? "links"
     }
 }
 
-export const prerender = false;
+export const prerender = true;

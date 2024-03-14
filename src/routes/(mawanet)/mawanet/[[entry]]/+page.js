@@ -19,19 +19,17 @@
     { entry: 'engine_of_narraphysic_gliding' },
     { entry: 'resonance' },
     { entry: 'vacuum_ascention' },
-    { entry: 'salt_sarcophaguses' },
     { entry: 'accursed_framework' },
     { entry: 'conceptual_configuration' },
     { entry: 'altered_field_presence' },
-    { entry: 'narraphysic_realm' },
-    { entry: 'retroactive_refractory_feedback_loop' },
     { entry: 'narraphysic_isolation_environment' },
+    { entry: 'narraphysic_realm' },
     { entry: 'narrative' },
+    { entry: 'retroactive_refractory_feedback_loop' },
+    { entry: 'paraexhumed' },
     { entry: 'revenant' },
     { entry: 'unbound' },
-    { entry: 'paraexhumed' },
     { entry: 'superimposition_event' },
-    { entry: 'gap_ammunition' },
         ];
     }
 
