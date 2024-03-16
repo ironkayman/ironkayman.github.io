@@ -3,6 +3,7 @@
 
     import MediaLink from "./media_link.svelte";
 </script>
+<div id="links-prev"></div>
 <div id="link-array">
     <MediaLink url="https://twitter.com/ironkayman" label="Twitter">
         <Twitter height="26" width="26"/>
@@ -19,6 +20,25 @@
 </div>
 
 <style>
+#links-prev {
+    min-height: 8rem;
+}
+#links-prev::before {
+    content: '';
+    background-image: url('/img/hm.jpg');
+    width: 60%;
+    height: 55%;
+    rotate: 180deg;
+    left: 20%;
+    background-size: cover;
+    /* background-clip: content-box;
+    -webkit-background-clip: content-box; */
+    z-index: -1;
+    margin-top: -7%;
+    background-position: 0% 0%;
+    display: block;
+    position: absolute;
+}
 
 #link-array {
     margin: 0.8rem 0rem;
