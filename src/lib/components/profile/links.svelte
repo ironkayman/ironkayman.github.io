@@ -27,7 +27,8 @@
     display: flex;
     align-items: center;
     vertical-align: middle;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-between;
     flex-wrap: wrap;
 }
 

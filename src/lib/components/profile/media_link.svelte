@@ -2,7 +2,7 @@
     export let url, label;
 </script>
 
-<a class="media-link-container" href="{url}">
+<a class="media-link-container" target="_blank" href="{url}">
     <div>
         <slot/>
         <span>{label}</span>
@@ -16,14 +16,20 @@
     margin: 0.5rem;
     padding: 4px 0.6rem;
     background-color: hsl(0, 8%, 31%);
+    text-decoration: none;
 
     & div {
-        min-width: 7.3rem;
-        align-items: center;
-    }
+        display: table;
+        min-width: 7.5rem;
 
-    & svg {
-        color: hsl(278, 33%, 6%);
+        & * {
+            vertical-align: middle;
+            /* display:table-cell; */
+        }
+        & svg,img {
+            color: hsl(278, 33%, 6%);
+            margin-right: 0.14em;
+        }
     }
 
     &:hover {

@@ -19,6 +19,7 @@
     { entry: 'engine_of_narraphysic_gliding' },
     { entry: 'resonance' },
     { entry: 'vacuum_ascention' },
+    { entry: 'salt_sarcophaguses' },
     { entry: 'accursed_framework' },
     { entry: 'conceptual_configuration' },
     { entry: 'altered_field_presence' },
@@ -30,6 +31,7 @@
     { entry: 'revenant' },
     { entry: 'unbound' },
     { entry: 'superimposition_event' },
+    { entry: 'gap_ammunition' },
         ];
     }
 

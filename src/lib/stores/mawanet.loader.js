@@ -59,20 +59,24 @@
         EntryComponent = (await import('$lib/mawanet/altered_field_presence.mdx')).default;
         break;
 
+    case 'narraphysic_isolation_environment':
+        EntryComponent = (await import('$lib/mawanet/narraphysic_isolation_environment.mdx')).default;
+        break;
+
     case 'narraphysic_realm':
         EntryComponent = (await import('$lib/mawanet/narraphysic_realm.mdx')).default;
+        break;
+
+    case 'narrative':
+        EntryComponent = (await import('$lib/mawanet/narrative.mdx')).default;
         break;
 
     case 'retroactive_refractory_feedback_loop':
         EntryComponent = (await import('$lib/mawanet/retroactive_refractory_feedback_loop.mdx')).default;
         break;
 
-    case 'narraphysic_isolation_environment':
-        EntryComponent = (await import('$lib/mawanet/narraphysic_isolation_environment.mdx')).default;
-        break;
-
-    case 'narrative':
-        EntryComponent = (await import('$lib/mawanet/narrative.mdx')).default;
+    case 'paraexhumed':
+        EntryComponent = (await import('$lib/mawanet/paraexhumed.mdx')).default;
         break;
 
     case 'revenant':
@@ -81,10 +85,6 @@
 
     case 'unbound':
         EntryComponent = (await import('$lib/mawanet/unbound.mdx')).default;
-        break;
-
-    case 'paraexhumed':
-        EntryComponent = (await import('$lib/mawanet/paraexhumed.mdx')).default;
         break;
 
     case 'superimposition_event':
