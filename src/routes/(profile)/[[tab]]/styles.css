@@ -10,6 +10,11 @@
   font-style: normal;
   src: url('/fonts/Fira_Sans/fira-sans.ultralight.ttf');
 }
+@font-face {
+  font-family: 'fira-sans-bold';
+  font-style: normal;
+  src: url('/fonts/Fira_Sans/FiraSans-Bold.ttf');
+}
 
 /* https://fonts.google.com/specimen/Fira+Sans */
 @font-face {
@@ -31,21 +36,24 @@ body {
     margin-left: 20px;
     margin-right: 20px;
   }
+}
 
-  /* https://www.publicdomainpictures.net/en/view-image.php?image=338833&picture=armillary-sphere*/
-  & > div::before {
-    content: "";
-    background-image: url("/img/armillary-sphere.jpg");
-    position: fixed;
-    left: 0;
-    right: 0;
-    z-index: -1;
-    display: block;
-    filter: brightness(3%) grayscale(100%);
-    background-position: 50% 13%;
-    width: 100%;
-    height: 100%;
-  }
+#bg-handler {
+  color: transparent;
+}
+/* https://www.publicdomainpictures.net/en/view-image.php?image=338833&picture=armillary-sphere*/
+#bg-handler::before {
+  content: "";
+  background-image: url("/img/armillary-sphere.jpg");
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  display: block;
+  filter: brightness(3%) grayscale(100%);
+  background-position: 50% 13%;
+  width: 100%;
+  height: 100%;
 }
 
 p {
@@ -204,6 +212,12 @@ p {
   font-weight: bolder;
   filter: drop-shadow(0 0 0.7rem);
 } */
+
+@media (max-width: 540px) {
+  #header-spacer {
+    display: none;
+  }
+}
 
 #header-spacer {
   min-height: 14rem;

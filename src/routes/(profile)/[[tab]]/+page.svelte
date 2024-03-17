@@ -13,7 +13,7 @@ document.title = "IRNKM : " + $page.data.tab;
 
 </script>
 
-<div>_57</div>
+<div id="bg-handler">_57</div>
 
 <div id="header-spacer">
   <div class="floating">

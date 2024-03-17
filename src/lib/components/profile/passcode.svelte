@@ -20,34 +20,40 @@
   });
 </script>
 
-<center>
-  <div id="nar-container">
-    <div id="heading">
-      <span>
-        Narraphysic Isolation Environment
-      </span>
+<div class="content-wrapper">
+  <center>
+    <div id="nar-container">
+      <div id="heading">
+        <span>
+          Narraphysic Isolation Environment
+        </span>
+      </div>
+      <div id="desc">
+        <span>Gateway [ <span id="gateway">PAU-9</span> ] : Clearance [ <span id="clearance">A2-1</span> ]</span>
+      </div>
     </div>
-    <div id="desc">
-      <span>Gateway [ <span id="gateway">PAU-9</span> ] : Clearance [ <span id="clearance">A2-1</span> ]</span>
+    <div use:melt={$root}>
+      {#each Array.from({ length: 6 }) as _}
+      <input
+        class="cell"
+        use:melt={$input()}
+      />
+      {/each}
     </div>
-  </div>
-  <div use:melt={$root}>
-    {#each Array.from({ length: 6 }) as _}
-    <input
-      class="cell"
-      use:melt={$input()}
-    />
-    {/each}
-  </div>
-  {#if $passcodeMatch}
-    <button id="passcode-check">
-      <a href="/mawanet">[ <span>Access Granted</span> ] Proceed</a>
-    </button>
-  {/if}
-</center>
+    {#if $passcodeMatch}
+      <button id="passcode-check">
+        <a href="/mawanet">[ <span>Access Granted</span> ] Proceed</a>
+      </button>
+    {/if}
+  </center>
+</div>
 
 
 <style>
+
+.content-wrapper {
+  padding: 0em 1.6em;
+}
 
 /* https://www.dafont.com/familiar-pro.font */
 @font-face {

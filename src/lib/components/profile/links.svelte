@@ -3,58 +3,107 @@
 
     import MediaLink from "./media_link.svelte";
 </script>
-<div id="links-prev"></div>
-<div id="link-array">
-    <MediaLink url="https://twitter.com/ironkayman" label="Twitter">
-        <Twitter height="26" width="26"/>
-    </MediaLink>
-    <MediaLink url="https://www.furaffinity.net/user/ironkayman" label="FurAffinity">
-        <img class="furaffinity-logo" src="https://img.icons8.com/?size=512&id=ZHufxSg061dE&format=png" alt="fa">
-    </MediaLink>
-    <MediaLink url="https://github.com/ironkayman" label="Github">
-        <Github height="26" width="26"/>
-    </MediaLink>
-    <MediaLink url="mailto:lori.j.kayman@gmail.com" label="Email">
-        <Mailbox2 height="26" width="26"/>
-    </MediaLink>
+
+<div class="link-array-warpper">
+    <div class="link-array">
+        <MediaLink url="https://twitter.com/ironkayman" label="Twitter">
+            <Twitter height="42" width="42"/>
+        </MediaLink>
+        <MediaLink url="https://www.furaffinity.net/user/ironkayman" label="FurAffinity">
+            <img class="furaffinity-logo" src="https://fontawesomeicons.com/lib/svg/furaffinity.svg" alt="fa">
+        </MediaLink>
+        <MediaLink url="https://github.com/ironkayman" label="Github">
+            <Github height="42" width="42"/>
+        </MediaLink>
+        <MediaLink url="mailto:lori.j.kayman@gmail.com" label="Email">
+            <Mailbox2 height="42" width="42"/>
+        </MediaLink>
+    </div>
 </div>
 
-<style>
-#links-prev {
-    min-height: 8rem;
-}
-#links-prev::before {
-    content: '';
-    background-image: url('/img/hm.jpg');
-    width: 60%;
-    height: 55%;
-    rotate: 180deg;
-    left: 20%;
-    background-size: cover;
-    /* background-clip: content-box;
-    -webkit-background-clip: content-box; */
-    z-index: -1;
-    margin-top: -7%;
-    background-position: 0% 0%;
-    display: block;
-    position: absolute;
-}
 
-#link-array {
-    margin: 0.8rem 0rem;
+<style>
+
+.link-array {
+    padding: 2rem 0rem;
+    /* margin: 0.8rem 0rem; */
     height: fit-content;
     gap: 0.8rem;
     display: flex;
     align-items: center;
     vertical-align: middle;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
     flex-wrap: wrap;
 }
 
+.link-array-warpper{
+    /* background: hsl(236, 16%, 33%); */
+    background-image: url("/img/mnt.png");
+    animation: show 160s infinite;
+    -webkit-animation: show 160s infinite;
+    /* height: 60vh; */
+}
+
+@-webkit-keyframes show {
+    0%      {background-position: 12% 45%;}
+    40%     {background-position: 18% 60%;}
+    50%    {background-position: 50% 70%;}
+    60%    {background-position: 75% 60%;}
+    80%    {background-position: 80% 45%;}
+    90%    {background-position: 40% 40%;}
+    100%    {background-position: 12% 45%;}
+}
+
+@keyframes show {
+    0%      {background-position: 10% 45%;}
+    40%     {background-position: 15% 60%;}
+    50%    {background-position: 50% 70%;}
+    60%    {background-position: 75% 60%;}
+    80%    {background-position: 80% 45%;}
+    90%    {background-position: 40% 40%;}
+    100%    {background-position: 10% 45%;}
+}
+
+
+@keyframes animate {
+    0%{
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+        border-radius: 0;
+    }
+
+    100%{
+        transform: translateY(-1000px) rotate(720deg);
+        opacity: 0;
+        border-radius: 50%;
+    }
+
+}
+
+
+
+/* @-webkit-keyframes spinY
+{  
+0%   {-webkit-transform: rotateY(0deg); -webkit-transform-origin: 0% 0% 5;}  
+100% {-webkit-transform: rotateY(360deg); -webkit-transform-origin: 0% 0% 5;}  
+} */
+
+
+/* .link-array::before {
+    content: "";
+    background-image: url("/img/links_prev.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-animation: spinX 3s infinite;
+    animation: spinX 3s infinite;
+} */
+
 .furaffinity-logo {
-    width: 26px;
-    height: 26px;
+    width: 42px;
+    height: 42px;
+
+    background-image: url();
 }
 
 </style>

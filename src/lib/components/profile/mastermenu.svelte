@@ -150,6 +150,7 @@ onMount(() => {
   justify-content: center;
   position: relative;
   font-family: sans-serif;
+  /* font-family: 'fira-sans-bold' !important; */
   font-weight: 230;
 
   cursor: pointer;
@@ -183,7 +184,7 @@ onMount(() => {
 }
 
 .tabbed-content {
-  padding: 0em 1.6em;
+  /* padding: 0em 1.6em; */
 
   &[aria-labelledby="gateway"] {
     /* background-image: url('/img/bc.jpg');
