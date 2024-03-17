@@ -8,4 +8,15 @@ export const load = ({ params }) => {
     }
 }
 
+  /** @type {import('./$types').EntryGenerator} */
+  export function entries() {
+    return [
+        { tab: 'links' },
+        { tab: 'about' },
+        { tab: 'projects' },
+        { tab: 'gateway' },
+    ];
+}
+
 export const prerender = true;
+export const trailingSlash = 'never';
