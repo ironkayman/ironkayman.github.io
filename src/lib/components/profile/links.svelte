@@ -4,7 +4,7 @@
     import MediaLink from "./media_link.svelte";
 </script>
 
-<div class="link-array-warpper">
+<div class="link-array-wrapper">
     <div class="link-array">
         <MediaLink url="https://twitter.com/ironkayman" label="Twitter">
             <Twitter height="42" width="42"/>
@@ -19,6 +19,7 @@
             <Mailbox2 height="42" width="42"/>
         </MediaLink>
     </div>
+    <div class="wrapper-blur"></div>
 </div>
 
 
@@ -26,43 +27,79 @@
 
 .link-array {
     padding: 2rem 0rem;
-    /* margin: 0.8rem 0rem; */
+    /* padding-right: -4px; */
     height: fit-content;
-    gap: 0.8rem;
+    gap: 1.05rem;
     display: flex;
-    align-items: center;
     vertical-align: middle;
     flex-direction: column;
     justify-content: space-between;
     flex-wrap: wrap;
+    width: 13.3rem;
+    margin-left: 1.5rem;
+    position: absolute;
+    z-index: 2;
+    /* background-color: hsla(4, 26%, 0%, 0.2) */
 }
 
-.link-array-warpper{
+.link-array-wrapper {
     /* background: hsl(236, 16%, 33%); */
     background-image: url("/img/mnt.png");
     animation: show 160s infinite;
     -webkit-animation: show 160s infinite;
-    /* height: 60vh; */
+    min-height: 64.8vh;
 }
 
-@-webkit-keyframes show {
-    0%      {background-position: 12% 45%;}
-    40%     {background-position: 18% 60%;}
-    50%    {background-position: 50% 70%;}
-    60%    {background-position: 75% 60%;}
-    80%    {background-position: 80% 45%;}
-    90%    {background-position: 40% 40%;}
-    100%    {background-position: 12% 45%;}
+.wrapper-blur {
+    position: absolute;
+    opacity: 0.98;
+    z-index: 1;
+    top: -20px;
+    margin-left: -10px;
+    background-image: url("/img/mnt.png");
+    --effect: blur(4px) brightness(50%);
+    -webkit-filter: var(--effect);
+    -moz-filter: var(--effect);
+    -o-filter: var(--effect);
+    -ms-filter: var(--effect);
+    filter: var(--effect);
+    height: 110%;
+    width: 16.1rem;
+    position: absolute;
+    animation: show 160s infinite;
+    -webkit-animation: show 160s infinite;
+}
+
+@media (max-width: 540px) {
+    .wrapper-blur {
+        width: 110%;
+    }
+    .link-array {
+        align-items: center;
+        width: 100%;
+        margin-left: 0px;
+    }
 }
 
 @keyframes show {
-    0%      {background-position: 10% 45%;}
-    40%     {background-position: 15% 60%;}
+    0%      {background-position: 2% 45%;}
+    40%     {background-position: 8% 60%;}
     50%    {background-position: 50% 70%;}
     60%    {background-position: 75% 60%;}
     80%    {background-position: 80% 45%;}
     90%    {background-position: 40% 40%;}
-    100%    {background-position: 10% 45%;}
+    100%    {background-position: 2% 45%;}
+}
+
+
+@-webkit-keyframes show {
+    0%      {background-position: 2% 45%;}
+    40%     {background-position: 8% 60%;}
+    50%    {background-position: 50% 70%;}
+    60%    {background-position: 75% 60%;}
+    80%    {background-position: 80% 45%;}
+    90%    {background-position: 40% 40%;}
+    100%    {background-position: 2% 45%;}
 }
 
 

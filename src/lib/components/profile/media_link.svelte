@@ -32,7 +32,7 @@
         }
         & svg,img {
             color: hsl(278, 33%, 6%);
-            margin-right: 0.7em;
+            margin-right: 0.25em;
         }
     }
 
@@ -58,6 +58,15 @@
         transition: 100ms;
         padding-bottom: 2px;
         margin-top: calc(0.5rem + 2px);
+
+        & span::after {
+            content: '*';
+            padding-left: 4px;
+            font-size: 0.8rem;
+            position: absolute;
+            color: hsl(0, 0%, 70%, 0.5);
+            margin-top: 14px;
+        }
 
         &:active {
             background-color: hsl(0, 8%, 23%);

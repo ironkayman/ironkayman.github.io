@@ -140,6 +140,7 @@ onMount(() => {
 }
 
 .menu-space {
+  z-index: 3;
   display: flex;
   overflow-x: auto;
 }
