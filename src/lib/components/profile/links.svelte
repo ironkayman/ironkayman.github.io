@@ -43,10 +43,9 @@
 }
 
 .link-array-wrapper {
-    /* background: hsl(236, 16%, 33%); */
-    background-image: url("/img/mnt.png");
-    animation: show 160s infinite;
-    -webkit-animation: show 160s infinite;
+    background-image: url("/img/hm.jpg");
+    animation: show 140s infinite;
+    -webkit-animation: show 140s infinite;
     min-height: 64.8vh;
 }
 
@@ -56,7 +55,7 @@
     z-index: 1;
     top: -20px;
     margin-left: -10px;
-    background-image: url("/img/mnt.png");
+    background-image: url("/img/hm.jpg");
     --effect: blur(4px) brightness(50%);
     -webkit-filter: var(--effect);
     -moz-filter: var(--effect);
@@ -66,8 +65,8 @@
     height: 110%;
     width: 16.1rem;
     position: absolute;
-    animation: show 160s infinite;
-    -webkit-animation: show 160s infinite;
+    animation: show 140s infinite;
+    -webkit-animation: show 140s infinite;
 }
 
 @media (max-width: 540px) {
@@ -82,24 +81,24 @@
 }
 
 @keyframes show {
-    0%      {background-position: 2% 45%;}
-    40%     {background-position: 8% 60%;}
+    0%      {background-position: 0% 45%;}
+    40%     {background-position: 2% 62%;}
     50%    {background-position: 50% 70%;}
-    60%    {background-position: 75% 60%;}
-    80%    {background-position: 80% 45%;}
-    90%    {background-position: 40% 40%;}
-    100%    {background-position: 2% 45%;}
+    /* 60%    {background-position: 75% 60%;} */
+    80%    {background-position: 40% 30%;}
+    90%    {background-position: 20% 35%;}
+    100%    {background-position: 0% 45%;}
 }
 
 
 @-webkit-keyframes show {
-    0%      {background-position: 2% 45%;}
-    40%     {background-position: 8% 60%;}
+    0%      {background-position: 0% 45%;}
+    40%     {background-position: 2% 62%;}
     50%    {background-position: 50% 70%;}
-    60%    {background-position: 75% 60%;}
-    80%    {background-position: 80% 45%;}
-    90%    {background-position: 40% 40%;}
-    100%    {background-position: 2% 45%;}
+    /* 60%    {background-position: 75% 60%;} */
+    80%    {background-position: 40% 30%;}
+    90%    {background-position: 20% 35%;}
+    100%    {background-position: 0% 45%;}
 }
 
 
