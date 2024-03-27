@@ -43,7 +43,7 @@
 }
 
 .link-array-wrapper {
-    background-image: url("/img/hm.jpg");
+    background-image: url("/img/hll.png");
     animation: show 140s infinite;
     -webkit-animation: show 140s infinite;
     min-height: 64.8vh;
@@ -55,7 +55,7 @@
     z-index: 1;
     top: -20px;
     margin-left: -10px;
-    background-image: url("/img/hm.jpg");
+    background-image: url("/img/hll.png");
     --effect: blur(4px) brightness(50%);
     -webkit-filter: var(--effect);
     -moz-filter: var(--effect);
