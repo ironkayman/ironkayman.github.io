@@ -55,13 +55,14 @@
     z-index: 1;
     top: -20px;
     margin-left: -10px;
-    background-image: url("/img/hll.png");
-    --effect: blur(4px) brightness(50%);
+    background-color: hsla(1, 1%, 1%, 0.7);
+    /* background-image: url("/img/hll.png"); */
+    /* --effect: blur(4px) brightness(50%);
     -webkit-filter: var(--effect);
     -moz-filter: var(--effect);
     -o-filter: var(--effect);
     -ms-filter: var(--effect);
-    filter: var(--effect);
+    filter: var(--effect); */
     height: 110%;
     width: 16.1rem;
     position: absolute;
