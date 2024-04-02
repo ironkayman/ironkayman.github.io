@@ -42,8 +42,6 @@
 center {
     display: flex;
     margin: 1.2rem 0rem;
-    width: 120%;
-    margin-left: -10%;
     gap: 0.8rem;
 
     flex-wrap: nowrap;
@@ -54,21 +52,23 @@ center {
     & > div {
         flex: 1;
         &:first-of-type {
-            border-top-left-radius: 8px;
-            border-bottom-left-radius: 8px;
+            border-top-left-radius: 2px;
+            border-bottom-left-radius: 2px;
         }
         &:last-of-type {
-            border-top-right-radius: 8px;
-            border-bottom-right-radius: 8px;
+            border-top-right-radius: 2px;
+            border-bottom-right-radius: 2px;
         }
     }
-    & > button {
+    /* & > button {
         flex: 3;
-    }
+    } */
 }
 
 .nier-access-point-trigger {
     font-size: 1.12rem;
+    max-width: 60%;
+
     padding: 0.5rem 0.8rem;
 
     background-color: rgb(45, 45, 48);
@@ -104,10 +104,9 @@ center {
 }
 
 .warning-stripes {
-    height: 2rem;
-    background-color: hsl(36, 80%, 56%);
-    background-image: repeating-linear-gradient(120deg, transparent, transparent 22px, rgb(0,0,0) 1px 50px);
-    box-shadow: 0 0 6mm hsla(36, 80%, 56%, 0.36);
+    height: 1rem;
+    /* background-color: hsl(36, 80%, 56%);
+    background-image: repeating-linear-gradient(120deg, transparent, transparent 22px, rgb(0,0,0) 1px 50px); */
 }
 
 .nier-enclave-a {
@@ -128,6 +127,11 @@ center {
     & a {
         color: rgb(70, 60, 65);
     }
+
+    & :is(h2,h3,h4,h5)::after {
+        content: unset;
+    }
+
 }
 
 </style>
