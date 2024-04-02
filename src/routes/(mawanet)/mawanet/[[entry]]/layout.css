@@ -60,8 +60,7 @@ h5 {
     font-size: 1.3rem;
 }
 
-p {
-    /* font-size: 1.1rem; */
+p, li {
     font-weight: 400;
     line-height: 1.6;
     margin: 0 0 24px;
@@ -166,6 +165,22 @@ code {
     border-width: 1px;
     padding: 1px 4px;
     font-size: 1.05rem;
+}
+
+em {
+    color: hsl(25, 25%, 55%);
+}
+:is(h1,h2,h3,h4,h5) + p {
+    & em {
+        color: hsl(8, 30%, 55%);
+    }
+}
+
+
+strong {
+    color: hsl(23, 70%, 70%);
+    padding-left: 1px;
+    padding-right: 1px;
 }
 
 div.container {
