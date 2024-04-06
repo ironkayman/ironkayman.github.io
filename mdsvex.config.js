@@ -5,7 +5,8 @@ const config = defineConfig({
   extensions: [".mdx", ".md",],
 
   smartypants: {
-    dashes: "oldschool",
+    dashes: true,
+    backticks: false,
   },
 
   remarkPlugins: [wikiLinkPlugin],
