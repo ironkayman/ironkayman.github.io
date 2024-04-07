@@ -46,7 +46,7 @@ let userHasScrolled;
 afterNavigate(() => {
   // let tabElement = document.getElementById(tabName);
   // console.log('tabElement after nav:', tabElement)
-  let y = window.visualViewport.height * 0.6;
+  let y = window.visualViewport.height * 0.7;
   // let y = tabElement.getBoundingClientRect().top
   window.scrollTo(0, y);
   // disableScrollHandling();
@@ -56,7 +56,7 @@ onMount(() => {
   let tabElement = document.getElementById(tabName);
   window.onscroll = function() {
     if (!userHasScrolled) {
-      window.scrollTo(0, tabElement.getBoundingClientRect().top);
+      window.scrollTo(0, tabElement.getBoundingClientRect().top + 40);
     }
     userHasScrolled = true;
   }
