@@ -46,9 +46,10 @@
 }
 
 .link-array-wrapper {
-    background-image: url("/img/hll.png");
-    animation: show 140s infinite;
-    -webkit-animation: show 140s infinite;
+    background-color: black;
+    /* background-image: url("/img/hll.png"); */
+    /* animation: show 140s infinite;
+    -webkit-animation: show 140s infinite; */
     min-height: 64.8vh;
 }
 
