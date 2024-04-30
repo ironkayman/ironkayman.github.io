@@ -1,7 +1,7 @@
 <script>
   import { onMount } from "svelte";
 
-  import { ArrowUp, BoxFill } from "svelte-bootstrap-icons";
+  import { TropicalStorm } from "svelte-bootstrap-icons";
   import { currentPageName } from "$lib/stores/mawanet.loader";
 
   /**
@@ -26,9 +26,9 @@
 <div class="sidebar">
   <div class="header">
     <a class="header-item header-start" data-sveltekit-preload-data="tap" href="/mawanet/index">
-      <BoxFill width={24} height={24} />
+      <TropicalStorm width={30} height={30} />
     </a>
-    <span class="header-item sidebar-span" id="maec-db-logo">MAEC-DB</span>
+    <span class="header-item sidebar-span" id="maec-db-logo">MAEC</span>
     <span class="header-item sidebar-span">//</span>
     <span class="header-item sidebar-span">
       {$currentPageName}
@@ -93,12 +93,12 @@
   }
 }
 
-/* #maec-db-logo {
+/* #maec-db-logo:hover {
   background: linear-gradient(
       30deg,
-      hsl(224, 85%, 66%),
-      hsl(269, 85%, 66%),
-      hsl(359, 85%, 66%)
+      hsl(20, 85%, 66%),
+      hsl(50, 85%, 66%),
+      hsl(34, 79%, 66%)
     )
     center center;
   background-size:100%;
