@@ -10,14 +10,14 @@
             <Twitter height="42" width="42"/>
         </MediaLink>
         <MediaLink url="https://www.furaffinity.net/user/ironkayman" label="FurAffinity">
-            <img class="furaffinity-logo" src="https://fontawesomeicons.com/lib/svg/furaffinity.svg" alt="fa">
+            <img class="furaffinity-logo" src="https://www.svgrepo.com/download/341832/fur-affinity.svg" alt="fa">
         </MediaLink>
         <MediaLink url="https://github.com/ironkayman" label="Github">
             <Github height="42" width="42"/>
         </MediaLink>
-        <MediaLink url="mailto:lori.j.kayman@gmail.com" label="Email">
+        <!-- <MediaLink url="mailto:lori.j.kayman@gmail.com" label="Email">
             <Mailbox2 height="42" width="42"/>
-        </MediaLink>
+        </MediaLink> -->
     </div>
     <div class="wrapper-blur"></div>
 </div>

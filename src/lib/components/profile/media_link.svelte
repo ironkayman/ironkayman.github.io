@@ -44,7 +44,7 @@
             color: rgb(49, 169, 243);
         }
         & .furaffinity-logo {
-            color: rgb(49, 169, 243);
+            filter: brightness(0.9) invert(.7) sepia(.5) hue-rotate(0deg) saturate(490%);
         }
         & svg.bi-discord {
             color: rgb(116, 162, 218);

@@ -117,9 +117,9 @@ onMount(() => {
 
   min-height: 8.2rem;
   width: 70%;
-  background-color: #353136;
+  /* background-color: #353136; */
   border-radius: 8px;
-  filter: drop-shadow(0 0 3em rgb(45, 45, 45, 0.6));
+  filter: drop-shadow(0 0 3em rgb(0, 0, 0, 0.6));
 
   &[data-current-active-tab="gateway"] {
     filter: drop-shadow(0 0 3em #fe5f0024);
@@ -171,7 +171,10 @@ onMount(() => {
   color: hsl(45, 50%, 70%);
 
   &[data-state="active"] {
-    background-color: #353136;
+    background-color: hsl(288, 5%, 12%);
+  }
+  &:hover {
+    background-color: hsl(288, 5%, 15%);
   }
 }
 
@@ -186,6 +189,18 @@ onMount(() => {
 
 .tabbed-content {
   /* padding: 0em 1.6em; */
+
+  /* https://stackoverflow.com/questions/28652571/dotted-background-overlay-effect-in-css */
+  &[aria-labelledby="about"] {
+    background: transparent;
+      background-position-x: 0%;
+      background-position-y: 0%;
+      background-image: none;
+      background-size: auto;
+    background-image: radial-gradient(hsl(0, 0%, 9%) 1px, transparent 0);
+    background-size: 50px 50px;
+    background-position: -25px -25px;
+  }
 
   &[aria-labelledby="gateway"] {
     /* background-image: url('/img/bc.jpg');

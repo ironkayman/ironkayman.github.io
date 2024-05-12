@@ -65,13 +65,14 @@
 
 .project-summary[data-type='mysterious-vendor-message'] {
   color: black;
-  background-color: hsla(66, 80%, 60%, 4%);
-  border-color: hsl(66, 80%, 60%);
+  background-color: hsla(29, 80%, 60%, 4%);;
+  border-color: hsl(29, 80%, 60%);
 
   & .project-name,
   .project-description,
-  .project-used-tech {
-    color: inherit;
+  .project-details,
+  .details-trigger {
+    color: hsla(20, 88%, 70%, 0.9);
   }
 }
 .project-summary {
