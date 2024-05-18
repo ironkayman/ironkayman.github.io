@@ -107,7 +107,8 @@ h5 {
 p, li {
     font-weight: 400;
     line-height: 1.6;
-    margin: 0 0 24px;
+    margin: 0 0;
+    padding-bottom:  24px;
 }
 
 @media (max-width: 540px) {
@@ -239,13 +240,22 @@ div.container {
         counter-reset: paragraph;
     }
 
-    .container > p::before {
+    /* Paragraph counter styles */
+    :is(p,li)::before {
         counter-increment: paragraph;
-        content: counter(paragraph) '.';
+        content: '[ ' counter(paragraph) ' ]';
         position: absolute;
-        color: rgb(157, 157, 157);
-        left: 16.6%;
+        color: transparent;
+        left: 10%;
         font-size: 0.9em;
+    }
+    :is(p,li):hover::before {
+        color: hsl(0, 0%, 60%);
+        animation: paragraphCounerFade 100ms linear;
+    }
+    @keyframes paragraphCounerFade {
+        0% { opacity: 0 }
+        50% { opacity: 0.8 }
     }
 }
 
