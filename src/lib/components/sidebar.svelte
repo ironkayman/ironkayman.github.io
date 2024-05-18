@@ -120,7 +120,7 @@
     display: flex;
     position: fixed;
     top: 26vh;
-    left: 5rem;
+    left: 4.2rem;
     width: 13%;
     height: calc(100% - 26vh);
     word-wrap: normal;
