@@ -12,6 +12,10 @@
 
   $: updateTitle(data.pageName);
  
+  const tocRenderStyleExclusions = [
+    'MAELSTROM ENCYCLOPEDIA CENTRAL'.toLowerCase(),
+  ]
+
   /**
    * crete table of content by scanning a component
    */
@@ -20,8 +24,11 @@
     states: { activeHeadingIdxs, headingsTree },
   } = createTableOfContents({
     selector: '#toc-builder-preview',
-    exclude: [],
-    activeType: 'all',
+    // TODO: if only 2 or less headings are present, exclude all
+    exclude: ['h1',],
+    // FIXME: sometimes other pages ones navigated don't display
+    // custom active styles with "highest" stategy 
+    activeType: tocRenderStyleExclusions.includes(data.pageName) ? 'highest' : 'all',
     /**
      * Filters all heading belonging to the current mdx entry
      * 
@@ -38,13 +45,12 @@
 
       if (container && element) {
         container.scrollTo({
-          top: element.offsetTop - container.offsetTop - 16,
+          top: element.offsetTop - container.offsetTop - 24,
           behavior: 'smooth',
         });
       }
     },
   });
- 
 
   /**
    * Updates documents title reactively

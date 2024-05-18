@@ -9,20 +9,21 @@
   export let level = 1;
 </script>
 
+<!-- we override on:m-click with {(e)=>{e.preventDefault()}} within an item
+becouse during listening to the mdx object, as it is replaced,
+the handler function within the default m-click continues to point onto previous
+MDX component table of contents
+-->
 <div class="entry-table-of-content">
-  <ul class="{level !== 1 ? 'pl-4' : ''}">
+  <ul>
     {#if tree && tree.length}
       {#each tree as heading, i (i)}
         <li>
           <a
             href="#{heading.id}"
             use:melt={$item(heading.id)}
+            on:m-click={(event)=>{event.preventDefault()}}
           >
-            <!--
-              Along with the heading title, the original heading node
-              is also passed down, so you can display headings
-              however you want.
-            -->
             {@html heading.node.innerHTML}
           </a>
           {#if heading.children && heading.children.length}
