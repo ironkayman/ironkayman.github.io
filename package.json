@@ -22,7 +22,6 @@
     "eslint-plugin-svelte": "^2.30.0",
     "mdsvex": "^0.11.0",
     "remark": "^15.0.1",
-    "remark-wiki-link": "^2.0.1",
     "svelte": "^4.0.5",
     "svelte-check": "^3.4.3",
     "svelte-sequential-preprocessor": "^2.0.1",
@@ -32,6 +31,7 @@
   "type": "module",
   "dependencies": {
     "@fontsource/open-sans": "^5.0.17",
+    "remark-wiki-link": "^2.0.1",
     "svelte-bootstrap-icons": "^3.1.0",
     "svelte-routing": "^2.8.0"
   }
