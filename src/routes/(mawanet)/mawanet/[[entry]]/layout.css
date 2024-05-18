@@ -249,14 +249,11 @@ div.container {
         right: 8%;
         font-size: 0.9em;
     }
-    /* :is(p,li):hover::before {
-        color: hsl(0, 0%, 60%);
-        animation: paragraphCounerFade 100ms linear;
-    } */
-    /* @keyframes paragraphCounerFade {
-        0% { opacity: 0 }
-        50% { opacity: 0.8 }
-    } */
+    /* skip authors */
+    blockquote > ul > li::before {
+        counter-increment: paragraph 0;
+        color: transparent;
+    }
 }
 
 
