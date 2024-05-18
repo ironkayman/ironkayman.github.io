@@ -39,6 +39,10 @@
   </div>
 </div>
 
+<div class="toc">
+  <slot name="toc"></slot>
+</div>
+
 <style>
 
 .sidebar {
@@ -107,4 +111,20 @@
   background-clip: text;
 } */
 
+.toc {
+  display: none;
+}
+
+@media only screen and (min-width: 1001px) {
+  .toc {
+    display: flex;
+    position: fixed;
+    top: 26vh;
+    left: 5rem;
+    width: 13%;
+    height: calc(100% - 26vh);
+    word-wrap: normal;
+    overflow-y: scroll;
+  }
+}
 </style>

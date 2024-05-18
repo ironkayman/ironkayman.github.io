@@ -3,7 +3,7 @@
   import { createTableOfContents } from '@melt-ui/svelte';
 
   import { currentPageName } from "$lib/stores/mawanet.loader";
-  // import Tree from '$lib/components/toc.svelte';
+  import Tree from '$lib/components/toc.svelte';
   import Sidebar from "$lib/components/sidebar.svelte"
   
   export let data;
@@ -20,13 +20,22 @@
     states: { activeHeadingIdxs, headingsTree },
   } = createTableOfContents({
     selector: '#toc-builder-preview',
-    exclude: ['h1',],
+    exclude: [],
     activeType: 'all',
-    headingFilterFn: (heading) => !heading.hasAttribute('data-toc-ignore'),
+    /**
+     * Filters all heading belonging to the current mdx entry
+     * 
+     * @param {HTMLElement} heading Heading element
+     * @returns {Boolean} Can an element be passed into final table of contents
+     */
+    headingFilterFn: (heading) => {
+      const validity = !heading.hasAttribute('data-toc-ignore') && !heading.className.includes('error403') && !heading.parentNode.className.includes('peeker');
+      return validity;
+    },
     scrollFn: (id) => {
       const container = document.getElementById('toc-builder-preview');
       const element = document.getElementById(id);
- 
+
       if (container && element) {
         container.scrollTo({
           top: element.offsetTop - container.offsetTop - 16,
@@ -50,7 +59,15 @@
   $: currentPageName.set(data.pageName.replace(/\_/g," ").split(' ')[0].toUpperCase());
 </script>
 
-<Sidebar/>
+<Sidebar>
+  <div slot="toc">
+    <Tree
+      tree={$headingsTree}
+      activeHeadingIdxs={$activeHeadingIdxs}
+      {item}
+    ></Tree>
+  </div>
+</Sidebar>
 
 <div class="container">
   <div id="toc-builder-preview">

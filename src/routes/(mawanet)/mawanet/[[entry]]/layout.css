@@ -241,7 +241,7 @@ div.container {
     }
 
     /* Paragraph counter styles */
-    :is(p,li)::before {
+    div.container :is(p,li)::before {
         counter-increment: paragraph;
         content: '[ ' counter(paragraph) ' ]';
         position: absolute;
