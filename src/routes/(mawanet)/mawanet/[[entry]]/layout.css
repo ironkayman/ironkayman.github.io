@@ -245,18 +245,18 @@ div.container {
         counter-increment: paragraph;
         content: '[ ' counter(paragraph) ' ]';
         position: absolute;
-        color: transparent;
-        left: 10%;
+        color: hsl(0, 0%, 60%);
+        right: 8%;
         font-size: 0.9em;
     }
-    :is(p,li):hover::before {
+    /* :is(p,li):hover::before {
         color: hsl(0, 0%, 60%);
         animation: paragraphCounerFade 100ms linear;
-    }
-    @keyframes paragraphCounerFade {
+    } */
+    /* @keyframes paragraphCounerFade {
         0% { opacity: 0 }
         50% { opacity: 0.8 }
-    }
+    } */
 }
 
 
