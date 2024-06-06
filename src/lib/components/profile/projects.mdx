@@ -11,126 +11,118 @@
   } = createCollapsible();
 </script>
 
-<ProjectEntry
-  name="RuPost Desktop"
-  link="https://rupost.ru/desktop"
-  description="A desktop email client based on
-    Mozilla Thunderbird Supernova with an addition of
-    disign, workflow and overall feature enhancements"
-  date="02.2022 - ..."
->
+<ProjectEntry link="https://rupost.ru/desktop">
+<span slot="name">RuPost Desktop</span>
+<span slot="desc">A desktop email client based on Mozilla Thunderbird devised to bring Outlook-like workflow on top of Thunderbird though addition of features, enhancements, bugfixes, and redesigns</span>
+<span slot="date">02.2022 - ...</span>
+<div slot="did">
 
-<div slot="participation">
-
-- UI/UX design, icons, main window composition,
-proportions and layouts, lesser customisation
-in favour of opinionated design and workflow
-- Mozilla Mach toolchain functionality and network transparency R&D,
-additional features for self-hosted-oriented approach
-- Various privacy enhancements and security hardening including
-telemetry removal and Remote Settings/Kinto decoupling from hosted by Mozilla Foundation services
-- Reimplementaion of DEB and MSI packaging pipelines in place of Mach's
+- UI/UX redesign and composition in favour of opinionated design
+- Setup of development processes
+  - Development of a pattern through which additional features are installed on top of the existing/replaced ones through webextenions' Experiments API
+- Network trafic monitoring, removal of Mozilla's/MZLA's telemetry and remote settings delivery tooling for a highly secured/monitored corporate environments
+- Rework and creating of Mozilla Mach CLI components
+  - Reimplementaion of more developer-friendly DEB and MSI packaging pipelines in place of Mach's
+  - Intergration of Mozilla Policies specification into packaging pipleline
+  - CLI decoupling from cloud services
+  - DX improvements, bridging of package registries (cargo, PyPi, etc.) over CLI, improvement of Mach's configurability
 
 </div>
-<div slot="technologies">
+<div slot="tech">
 
-- XPCOM
+- Mozilla
+  - XPCOM component framework
 - VanillaJS
 - CSS, that is theming and overall look/feel alterations
   - css functions, mostly color/theming-related
 - Python
   - Mozilla Mach
   - Poetry, Ruff
+- C++ XPCOM components tuning, export of additional logic/methods into JS runtime environment
 
 </div>
 </ProjectEntry>
 
-<ProjectEntry
-  name="RuPost"
-  link="https://rupost.ru"
-  date="12.2020 - 02.2022"
-  description="An out-of-the-box batteries-included
-    IMAP / SMTP / CalDAV / CardDAV on-premise email
-    server solution based on Postfix and Dovecot"
->
-<div slot="participation">
+<ProjectEntry link="https://rupost.ru">
+<span slot="name">RuPost</span>
+<span slot="date">12.2020 - 02.2022</span>
+<span slot="desc">An out-of-the-box batteries-included IMAP / SMTP / CalDAV / CardDAV on-premise email server solution based on Postfix and Dovecot</span>
+<div slot="did">
 
-- Deployment and finalised selection of MTA/MDA components,
-that are Postfix and Dovecot
-  - Additional research, deployment and cross-integration of
-  various infrastructure components: Exim, Amavis, mailcow, iRedMail,
-  MS AD, FreeIPA, OpenLDAP
-- Developemnt of Proof-Of-Concept and architecture of the Service,
-further refactoring as project gained more features
-  - Development of YAML-based (StrictYAML derivation of YAML 1.1)
-  configuration markup syntax,
-  it's engine/mapper for unified interpretation, translation and
-  representation of every individual mailflow component
-  configuration files' syntax
-  (i.e. postfix's master.conf, main.conf, etc.)
-  - As amounts of mailflow components increased,
-  discussion and implimentation of interpreters of said componets'
-  configuration files' syntaxes
-- UI and UX research, study, composition and development of VanillaJS and
-KnockoutJS 3 components-backed Bootstrap 4 administraction panel based on
-industries WebUI best practices
-  - Migration from WTForms to hybrid application and then to a regular KnockoutJS SPA
-  - Coordination of research and migration to a different UI framework, that is React/MobX
-
-</div>
-<div slot="technologies">
-
+- Deployment and finalised selection of MTA/MDA components, that are Postfix and Dovecot
+  - Additional research, deployment and cross-integration of various infrastructure components
+    - Exim
+    - Amavis
+    - MailCow
+    - iRedMail
+    - MS AD
+    - FreeIPA
+    - OpenLDAP
+- Developemnt of Proof-Of-Concept and architecture of the Service, further refactoring as project gained more features
+  - Development of YAML-based (StrictYAML derivation of YAML 1.1) configuration markup syntax, it's engine/mapper for unified interpretation, translation and representation of every individual mailflow component configuration files' syntax (i.e. postfix's master.conf, main.conf, etc.)
+  - As amounts of mailflow components increased, discussion and implimentation of interpreters of said componets' configuration files' syntaxes
+- Development of design guidelines for Web UI of the control panel
+  - UI and UX research, study, composition and development of VanillaJS and KnockoutJS 3 components-backed Bootstrap 4 administraction panel based on industries WebUI best practices
+  - Continius suppport and further migration of frontend technology
+    - Migration from WTForms to hybrid VanillaJS application
+    - Migration to KnockoutJS SPA
+  - Coordination of research and migration to a final framework solution: React+MobX
+  - Creation of OSS UI documentation pipeline through UML
 - Python
-  - Flask, WTForms, SQLAlchemy, SQL
+  - Flask
+  - WTForms
+  - SQLAlchemy
+- PostreSQL
 - VanillaJS
-- KnockoutJS 3 components
+- KnockoutJS 3
+  - Knockout Component UIKit design development
   - KnockoutJS SPA Router
+  - Component/Overall webpage performace testing and measurements
 - AdminLTE 3
   - Bootstrap 4
   - Bootstrap-based plugins
-- Webpack, ESbuild, Babel
+- DX improvements and integrations
+  - pre-commit hooks cross-language integrations
+  - Documentation
+    - Frontand JSdoc styling and syntax checks
+    - Backend RST docstring styling and syntax checks
+  - Webpack
+  - ESbuild
+  - Babel
 
 </div>
 </ProjectEntry>
 
-<ProjectEntry
-  name="RuNER"
-  link="https://runer.workspad.com/"
-  date="07.2019 - 12.2020"
-  description="
-    Russian language NLP/NLU solution designed
-    to be integrated with chat bot platforms"
->
-<div slot="participation">
+<ProjectEntry link="https://runer.workspad.com/">
+<span slot="name">RuNER</span>
+<span slot="date">07.2019 - 12.2020</span>
+<span slot="desc">On-premise russian language no-AI NLP/NLU lightweight solution designed for chat bot integrations and CRMs</span>
+<div slot="did">
 
-- Implimentation of architecture of parser and business-logic
-  - Further development of additional features with
-  user-defined custom dictionaries
-- Utilisation of Pandas and Jupyter Notebooks in order to measure avarage
-grammar statistics, usage and patterns
+- Implimentation of architecture for variuos part of the pipeline (i.e. parsing, tokenisation)
+- API and specification development for user-defined custom dictionaries and behaviours  
 
 </div>
-<div slot="technologies">
+<div slot="tech">
 
 - Python, Tornado framework
 
 </div>
 </ProjectEntry>
 
-<ProjectEntry
-  name="Linux-based VDI infrastructure"
-  date="05.2019 - 07.2019"
-  description="A single physical server hosts templated KVM/QEMU VMs with NVIDIA GPU being passed through"
->
-<div slot="participation">
+<ProjectEntry>
+<span slot="name">Linux-based VDI infrastructure</span>
+<span slot="date">05.2019 - 07.2019</span>
+<span slot="desc">Installation of a physical server hosting templated KVM/QEMU VMs with GPUs passed into them</span>
+<div slot="did">
 
-- Selection of required hardware
-- Arch-based and Debian-based systems' configuration
-  - IOMMU groups setup
+- Analysis and selection of required hardware
+- Arch-based testing stands deployment
+- Finalised production-ready Debian-based deployment
 - KVM/QEMU VM generation over virsh interfaces with python
 
 </div>
-<div slot="technologies">
+<div slot="tech">
 
 - KVM/QEMU
 - Virsh
@@ -140,26 +132,23 @@ grammar statistics, usage and patterns
 </div>
 </ProjectEntry>
 
-<ProjectEntry
-  name="Windows backup, replcation and storage infrastructure"
-  date="09.2018 - 05.2019"
-  description="VEEAM setup within a MS VMM-managed cluster inside
-    of an AD forest.
-    Part of the infrastructre required to support backup
-    and replication, automatic hot and cold storage management
-    of templated Windows VMs"
->
-<div slot="technologies">
+<ProjectEntry>
+<span slot="name">Windows backup, replcation and storage infrastructure</span>
+<span slot="date">09.2018 - 05.2019</spsan>
+<span slot="desc">VEEAM setup within a MS VMM-managed cluster inside of an AD forest. Part of the infrastructre required to support backup and replication, automatic hot and cold storage management of templated Windows VMs</span>
+<div slot="tech">
 
-- MS Windows Server Nano
-  - Powershell 5.1 automation-oriented scripting
+- VEEAM Backup and replication infrastructure installation, support, maintanace and integration w/ preexisting windows Server Standard infrastructure
+- Migration of the latter to Windos Server Nano, including:
   - MS IIS
-  - MS Hyper-V
+  - MS Hyper-V hosts to dedicated MSWS Nano installations
 - MS VMM
+  - Management and integration with dedicated TrueNAS hardware storage
 - MS AD
 - MS ADFS
-- VEEAM Backup and replication
-- Kerberos
+- Kerberos access to hardware virtulisation hosts
+- VM and hardware networking, access to DMZ over MikroTik + pFSence solution
+- Powershell automation-oriented scripting
 
 </div>
 </ProjectEntry>
@@ -181,11 +170,10 @@ grammar statistics, usage and patterns
     <p><code>- Displaying filtered block contents ...</code>
     </p>
 
-    <ProjectEntry type="mysterious-vendor-message"
-      name="█████████ █████ ████"
-      description="█ ████████████ ████████"
-    >
-<div slot="technologies">
+    <ProjectEntry type="mysterious-vendor-message">
+      <span slot="name">█████████ █████ ████</span>
+      <span slot="desc">█ ████████████ ████████</span>
+<div slot="tech">
 
 - ███████████ █████████ ██████████
 
@@ -212,6 +200,7 @@ li {
 }
 
 .danger {
+  margin-top: 12rem;
   /* background-color: hsla(0, 89.2%, 21.8%, 0.8); */
   border-radius: 2px;
   padding: 0.4em;
@@ -243,7 +232,9 @@ li {
   cursor: cell;
   font-weight: bolder;
   padding: 0px 1rem;
-  
+
+  margin-top: 10rem;
+
   color: hsla(288, 5%, 18%, 20%);
   background-color: transparent;
 

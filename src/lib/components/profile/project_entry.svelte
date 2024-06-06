@@ -1,6 +1,5 @@
 <script>
-  export let name, description, link, date;
-  export let type;
+  export let type, link;
 
   import { BoxArrowUpRight, ChevronExpand, ChevronBarContract } from "svelte-bootstrap-icons"
 
@@ -17,13 +16,13 @@
 <div>
   <div class="project-summary" data-type={type ?? ''} use:melt={$root}>
     <h3 class="project-name">
-      {name}
+      <slot name="name"/>
       {#if link}
         <a target="_blank" rel="noopener noreferrer" class="link-out" href="{link}"><BoxArrowUpRight/></a>
       {/if}
     </h3>
     <div class="project-description">
-      {description}
+      <slot name="desc"/>
     </div>
     <div use:melt={$trigger} class="details-trigger">
       <b>
@@ -38,16 +37,16 @@
     </div>
     {#if $open}
     <div class="project-details" transition:slide>
-      {#if $$slots.participation}
+      {#if $$slots.did}
         <p>
           <b>What I did:</b>
-          <slot name="participation"/>
+          <slot name="did"/>
         </p>
       {/if}
-      {#if $$slots.technologies}
+      {#if $$slots.tech}
         <p>
           <b>Technologies and products used:</b>
-          <slot name="technologies"/>
+          <slot name="tech"/>
         </p>
       {/if}
       {#if $$slots.message}

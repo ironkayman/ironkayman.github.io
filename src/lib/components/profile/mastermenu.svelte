@@ -6,7 +6,7 @@ import { onMount } from 'svelte';
 import { goto, afterNavigate, disableScrollHandling } from '$app/navigation'; 
 
 import { cubicInOut } from 'svelte/easing';
-import { crossfade } from 'svelte/transition';
+import { crossfade, blur } from 'svelte/transition';
 
 import { FileLock2Fill } from "svelte-bootstrap-icons"
 
@@ -27,12 +27,17 @@ const {
 });
 
 var triggers = [
-  { id: 'links', title: 'Links' },
-  { id: 'about', title: 'About' },
-  { id: 'projects', title: 'Projects' },
+  { id: 'links', title: '∷ LINKS ∷' },
+  { id: 'about', title: '∷ ABOUT ∷' },
+  { id: 'projects', title: '∷ RESUME ∷' },
 ];
 
 if (tabName == 'gateway') {
+  triggers = [
+    { id: 'links', title: 'Ⅰ LINKS Ⅰ' },
+    { id: 'about', title: 'Ⅱ ABOUT Ⅱ' },
+    { id: 'projects', title: 'Ⅲ RESUME Ⅲ' },
+  ];
   triggers.push({ id: 'gateway', title: '-' });
 }
 
@@ -83,7 +88,7 @@ onMount(() => {
           {#if triggerItem.id != 'gateway'}
             {triggerItem.title}
           {:else}
-            <FileLock2Fill height={22} width={22}/>
+            ▣
           {/if}
           {#if $value === triggerItem.id}
             <div class="trigger-indicator"
@@ -151,8 +156,10 @@ onMount(() => {
   justify-content: center;
   position: relative;
   font-family: sans-serif;
-  /* font-family: 'fira-sans-bold' !important; */
+  /* font-family: 'fira-sans-semi-bold' !important; */
+  font-family: sans-serif !important;
   font-weight: 230;
+  letter-spacing: .1rem;
 
   cursor: pointer;
   user-select: none;
@@ -164,17 +171,27 @@ onMount(() => {
 
   flex: 1;
   border-color: transparent;
-  background-color: rgb(45, 45, 48);
 
   border-width: 2px;
   border-style: solid;
   color: hsl(45, 50%, 70%);
 
-  &[data-state="active"] {
-    background-color: hsl(288, 5%, 12%);
-  }
+  transition: 20ms;
+  background-color: rgb(45, 45, 48);
+  box-shadow: 0px 11px rgb(36, 36, 38);
+  margin-bottom: 11px;
+
   &:hover {
     background-color: hsl(288, 5%, 15%);
+    box-shadow: 0px 8px hsl(288, 5%, 10%);
+    margin-bottom: 8px;
+  }
+
+  &[data-state="active"] {
+    border-color: transparent;
+    background-color: hsl(288, 5%, 12%);
+    box-shadow: 0px 6px hsl(288, 4%, 8%);
+    margin-bottom: 6px;
   }
 }
 

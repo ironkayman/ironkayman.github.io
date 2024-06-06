@@ -15,6 +15,11 @@
   font-style: normal;
   src: url('/fonts/Fira_Sans/FiraSans-Bold.ttf');
 }
+@font-face {
+  font-family: 'fira-sans-semi-bold';
+  font-style: normal;
+  src: url('/fonts/Fira_Sans/FiraSans-SemiBold.ttf');
+}
 
 /* https://fonts.google.com/specimen/Fira+Sans */
 @font-face {

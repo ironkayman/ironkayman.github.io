@@ -18,10 +18,11 @@
     text-decoration: none;
     background-color: hsl(0, 8%, 31%);
     box-shadow: 0px 8px hsl(0, 8%, 25%);
+    letter-spacing: .05rem;
 
     & div {
         display: table;
-        min-width: 8.8rem;
+        min-width: 9.4rem;
 
         & * {
             vertical-align: middle;
