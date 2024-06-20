@@ -22,6 +22,7 @@
     { entry: 'salt_sarcophaguses' },
     { entry: 'accursed_framework' },
     { entry: 'conceptual_configuration' },
+    { entry: 'death_drive' },
     { entry: 'altered_field_presence' },
     { entry: 'narraphysic_isolation_environment' },
     { entry: 'narraphysic_realm' },

@@ -55,6 +55,10 @@
         EntryComponent = (await import('$lib/mawanet/conceptual_configuration.mdx')).default;
         break;
 
+    case 'death_drive':
+        EntryComponent = (await import('$lib/mawanet/death_drive.mdx')).default;
+        break;
+
     case 'altered_field_presence':
         EntryComponent = (await import('$lib/mawanet/altered_field_presence.mdx')).default;
         break;
